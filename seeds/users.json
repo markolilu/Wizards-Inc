@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "username": "sjenkins",
+    "first_name": "Sarah",
+    "last_name": "Jenkins",
+    "email": "sarah@example.com",
+    "password": "password123"
+  },
+  {
+    "id": 2,
+    "username": "monstera_mike",
+    "first_name": "Michael",
+    "last_name": "Chen",
+    "email": "mike@urbanjungle.com",
+    "password": "plantparent456"
+  },
+  {
+    "id": 3,
+    "username": "diggin_it",
+    "first_name": "Elena",
+    "last_name": "Rodriguez",
+    "email": "elena@gardenplots.org",
+    "password": "dirtunderfingernails"
+  },
+  {
+    "id": 4,
+    "username": "the_tomato_guy",
+    "first_name": "Marcus",
+    "last_name": "Thorne",
+    "email": "marcus@heirloom.net",
+    "password": "beefsteak2026"
+  },
+  {
+    "id": 5,
+    "username": "petal_pusher",
+    "first_name": "Chloe",
+    "last_name": "Simms",
+    "email": "chloe@floraldesign.com",
+    "password": "bloomingday99"
+  }
+]

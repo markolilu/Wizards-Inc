@@ -1,0 +1,182 @@
+[
+  {
+    "id": 101,
+    "title": "First Heirloom Harvest! 🍅",
+    "content": "Finally picked my first Cherokee Purple tomato of the season. Incredible flavor! Tips on preventing skin cracking in this heat?",
+    "postedBy": "the_tomato_guy",
+    "user_id": 4,
+    "category_id": 2,
+    "created_on": "2026-03-16T08:30:00Z"
+  },
+  {
+    "id": 102,
+    "title": "Aphid Invasion! 🐜",
+    "content": "Found these little guys on my roses. Anyone have a DIY spray recipe that actually works?",
+    "postedBy": "sjenkins",
+    "user_id": 1,
+    "category_id": 1,
+    "created_on": "2026-03-16T09:15:00Z"
+  },
+  {
+    "id": 103,
+    "title": "Monstera Monday 🌿",
+    "content": "New leaf unfurling today! The fenestrations are getting better with every new shoot.",
+    "postedBy": "monstera_mike",
+    "user_id": 2,
+    "category_id": 3,
+    "created_on": "2026-03-16T10:00:00Z"
+  },
+  {
+    "id": 104,
+    "title": "Compost Tea Recipe",
+    "content": "Brewing a fresh batch of black gold for the spring veggies. Your soil will thank you later.",
+    "postedBy": "diggin_it",
+    "user_id": 3,
+    "category_id": 4,
+    "created_on": "2026-03-16T11:20:00Z"
+  },
+  {
+    "id": 105,
+    "title": "Propagating Lavender",
+    "content": "Taking softwood cuttings today. Fingers crossed for high success rates this year!",
+    "postedBy": "petal_pusher",
+    "user_id": 5,
+    "category_id": 5,
+    "created_on": "2026-03-16T12:45:00Z"
+  },
+  {
+    "id": 106,
+    "title": "Peony Blooms are here!",
+    "content": "These only last a week but they are the highlight of my garden every single year. 🌸",
+    "postedBy": "petal_pusher",
+    "user_id": 5,
+    "category_id": 6,
+    "created_on": "2026-03-16T14:10:00Z"
+  },
+  {
+    "id": 107,
+    "title": "Balcony Garden Hack",
+    "content": "Used vertical hanging shoe racks for my herbs. Saved so much floor space!",
+    "postedBy": "monstera_mike",
+    "user_id": 2,
+    "category_id": 7,
+    "created_on": "2026-03-16T15:30:00Z"
+  },
+  {
+    "id": 108,
+    "title": "Frost Warning ❄️",
+    "content": "Covering my tender greens tonight. Don't let the surprise frost take your hard work!",
+    "postedBy": "sjenkins",
+    "user_id": 1,
+    "category_id": 8,
+    "created_on": "2026-03-16T16:50:00Z"
+  },
+  {
+    "id": 109,
+    "title": "Pruning Shears Review",
+    "content": "Finally invested in some high-end bypass pruners. My wrists are much happier now.",
+    "postedBy": "the_tomato_guy",
+    "user_id": 4,
+    "category_id": 9,
+    "created_on": "2026-03-16T17:25:00Z"
+  },
+  {
+    "id": 110,
+    "title": "Wildflower Path Design",
+    "content": "Starting to sketch out the new cottage garden layout. Thinking of a curved gravel path.",
+    "postedBy": "diggin_it",
+    "user_id": 3,
+    "category_id": 10,
+    "created_on": "2026-03-16T18:40:00Z"
+  },
+  {
+    "id": 111,
+    "title": "Slug Defense 🐌",
+    "content": "Copper tape or beer traps? What's your go-to move for protecting Hostas?",
+    "postedBy": "sjenkins",
+    "user_id": 1,
+    "category_id": 1,
+    "created_on": "2026-03-17T07:10:00Z"
+  },
+  {
+    "id": 112,
+    "title": "Pepper Sprouting!",
+    "content": "My Habaneros just poked their heads above the soil. Spring is officially here.",
+    "postedBy": "the_tomato_guy",
+    "user_id": 4,
+    "category_id": 2,
+    "created_on": "2026-03-17T08:20:00Z"
+  },
+  {
+    "id": 113,
+    "title": "Spider Plant Babies",
+    "content": "This plant is literally throwing children at me. Who wants some cuttings? Free to a good home!",
+    "postedBy": "monstera_mike",
+    "user_id": 2,
+    "category_id": 3,
+    "created_on": "2026-03-17T09:45:00Z"
+  },
+  {
+    "id": 114,
+    "title": "Testing Soil pH",
+    "content": "Found out my soil is way too alkaline for my blueberries. Time to add some sulfur.",
+    "postedBy": "diggin_it",
+    "user_id": 3,
+    "category_id": 4,
+    "created_on": "2026-03-17T11:05:00Z"
+  },
+  {
+    "id": 115,
+    "title": "Pothos in Water",
+    "content": "Day 14 of water prop. We have significant root development. Shoots coming soon!",
+    "postedBy": "monstera_mike",
+    "user_id": 2,
+    "category_id": 5,
+    "created_on": "2026-03-17T13:30:00Z"
+  },
+  {
+    "id": 116,
+    "title": "Lavender Field Dreams",
+    "content": "Planning to line the entire driveway with Hidcote lavender. The scent will be amazing.",
+    "postedBy": "petal_pusher",
+    "user_id": 5,
+    "category_id": 6,
+    "created_on": "2026-03-17T14:50:00Z"
+  },
+  {
+    "id": 117,
+    "title": "Chickens in the Garden",
+    "content": "The girls are doing a great job tilling the spent vegetable beds today. Good fertilizer too!",
+    "postedBy": "diggin_it",
+    "user_id": 3,
+    "category_id": 7,
+    "created_on": "2026-03-17T16:15:00Z"
+  },
+  {
+    "id": 118,
+    "title": "Mulching 101",
+    "content": "Applying a thick layer of straw to keep the moisture in before the summer heat hits.",
+    "postedBy": "sjenkins",
+    "user_id": 1,
+    "category_id": 8,
+    "created_on": "2026-03-17T18:00:00Z"
+  },
+  {
+    "id": 119,
+    "title": "Best Watering Can?",
+    "content": "Looking for something with a long neck and a fine rose. Any recommendations?",
+    "postedBy": "petal_pusher",
+    "user_id": 5,
+    "category_id": 9,
+    "created_on": "2026-03-17T19:10:00Z"
+  },
+  {
+    "id": 120,
+    "title": "Native Plant Corner",
+    "content": "Finished the xeriscape section of the backyard. No more watering the lawn for me!",
+    "postedBy": "the_tomato_guy",
+    "user_id": 4,
+    "category_id": 10,
+    "created_on": "2026-03-17T20:30:00Z"
+  }
+]
