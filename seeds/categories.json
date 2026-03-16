@@ -1,0 +1,12 @@
+[
+  { "id": 1, "categoryName": "pest_control" },
+  { "id": 2, "categoryName": "edible_gardening" },
+  { "id": 3, "categoryName": "indoor_plants" },
+  { "id": 4, "categoryName": "soil_health" },
+  { "id": 5, "categoryName": "propagation_tips" },
+  { "id": 6, "categoryName": "flower_power" },
+  { "id": 7, "categoryName": "urban_homesteading" },
+  { "id": 8, "categoryName": "seasonal_prep" },
+  { "id": 9, "categoryName": "tool_reviews" },
+  { "id": 10, "categoryName": "garden_design" }
+]

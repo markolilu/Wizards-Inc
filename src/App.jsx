@@ -13,6 +13,7 @@ const App = () => {
                 <Routes>
                     {/* IMPORT <Route path='' element={<Name_Of_Component />} */}
                 </Routes>
+                <Footer />
             </SessionProvider>
         </div>
     )
