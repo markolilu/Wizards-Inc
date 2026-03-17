@@ -1,9 +1,11 @@
 import React from 'react';
-import { Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 //import components here
 
 // import session provider here
+import { SessionProvider } from './contexts/SessionContext';
+
 
 const App = () => {
     return (
@@ -17,4 +19,6 @@ const App = () => {
             </SessionProvider>
         </div>
     )
-}
+};
+
+export default App;
