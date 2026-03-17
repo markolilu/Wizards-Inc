@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import api from '../api'; // doesnt exist yet
 import { useNavigate } from 'react-router-dom';
 
-import { useSession } from '../contexts/SessionContext'; // doesnt exist yet
+import { useSession } from '../contexts/SessionContext'; 
 
 const Login = () => {
-    const [userName, setUserName] = useState(''); // fill with relevent 
-    const [password, setPassword] = useState(''); // fill with relevent
+    const [userName, setUserName] = useState(''); 
+    const [password, setPassword] = useState(''); 
     const navigate = useNavigate();
 
     const {setUser } = useSession();
