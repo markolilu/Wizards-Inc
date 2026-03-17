@@ -26,7 +26,7 @@ const Header = () => {
     <header>
       <div class="img"><img src="/src/assets/logo2.png" alt='Sow & Tell Logo'/></div>
       <nav>
-        <Link to="/">All Courses</Link>
+        <Link to="/">All Posts</Link>
         {token ? (
           <>
             <Link to="/profile">{wordCase(user.username)}'s Profile</Link>
