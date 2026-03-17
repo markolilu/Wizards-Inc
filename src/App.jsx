@@ -1,4 +1,6 @@
 import React from 'react';
+import { Routes, Route} from 'react-router-dom';
+import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import {useState} from 'react';
 
