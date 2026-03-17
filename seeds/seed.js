@@ -7,7 +7,7 @@ const { Post, Category, User } = require("../models");
 const userData = require("./users.json")
 
 // add data and seeding for Category model
-const categoryData = require("./category.json");
+const categoryData = require("./categories.json");
 
 // import seed data
 const postData = require("./posts.json");
