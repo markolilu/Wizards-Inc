@@ -33,21 +33,16 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
     
     <div style={styles.container}>
       {/* Navigation */}
-      
+      <Header />
       <NavBar />
 
       <div style={styles.main}>
-        {/* Sidebar */}
-        <aside style={styles.sidebar}>
-          <ul>
-           {renderPageLinks()}
-          </ul>
-        </aside>
-
+       
         {/* Content Area */}
         <section style={styles.content}>
           {children}
         </section>
+        
       </div>
 
       {/* Footer */}
