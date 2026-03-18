@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-
+//footer will be using #1b3022 background
 const Footer = () => {
 
   return (
@@ -9,6 +9,7 @@ const Footer = () => {
       
       <nav>
         <div class="img"><img src="/src/assets/logo3.png" /></div>
+        <Divider />
         <div class="footer">
             <p>The social network for roots and shoots. Document your journey from seed to harvest.</p>
         </div>

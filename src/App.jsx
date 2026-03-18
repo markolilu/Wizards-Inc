@@ -14,6 +14,7 @@ import Account from './pages/account';
 import Footer from './components/Footer';
 
 import { SessionProvider } from './contexts/SessionContext';
+import AboutPage from './pages/about';
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/account" element={<Account />} />
+                    <Route path="/about" element={<AboutPage />} />
                 </Routes>
                 <Footer />
             </SessionProvider>
