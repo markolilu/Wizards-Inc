@@ -30,9 +30,10 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
 
 
   return (
+    
     <div style={styles.container}>
       {/* Navigation */}
-      <Header />
+      
       <NavBar />
 
       <div style={styles.main}>
@@ -57,3 +58,4 @@ const Layout = ({ children, selectedPage, onSetPage }) => {
 };
 
 export default Layout;
+
