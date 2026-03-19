@@ -4,34 +4,46 @@ import api from '../api';
 import Blogpost from './Blogpost';
 
 const Blogpost = () => {
-  const [courses, setCourses] = useState([]);
+  const [courses, setPosts] = useState([]);
 
   useEffect(() => {
-    const fetchCourses = async () => {
+    const fetchPosts = async () => {
       try {
-        const response = await api.get('/api/courses');
+        const response = await api.get('/api/posts');
 
-        console.log('courses', response.data);
+        console.log('posts', response.data);
 
-        setCourses(response.data);
+        setPosts(response.data);
       } catch (error) {
-        console.error('Failed to fetch courses', error);
+        console.error('Failed to fetch posts', error);
       }
     };
 
-    fetchCourses();
+    fetchPosts();
   }, []);
 
   return (
     <div>
-      <h2>All Courses</h2>
-      <div className="course-list">
-        {courses.map((course) => (
-          <CourseCard key={course.id} course={course} />
+      <h2>All Posts</h2>
+      <div className="post-list">
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} />
         ))}
       </div>
     </div>
   );
 };
 
-export default CourseList;
+export default BlogList;
+
+
+// return (
+//     <div>
+//       <h2>All Posts</h2>
+//       <div className="post-list">
+//         {posts.map((post) => (
+//           <CourseCard key={course.id} course={course} />
+//         ))}
+//       </div>
+//     </div>
+//   );
