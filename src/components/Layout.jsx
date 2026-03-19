@@ -1,54 +1,29 @@
+import { createContext } from 'react';
+import { Outlet } from 'react-router-dom';
+
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
-const pages = [
-  { name: 'Home', key: 'home' },
-  { name: 'About', key: 'about' },
-  { name: 'Contact', key: 'contact' },
-  { name: 'Account', key: 'account' },
-  { name: 'Login', key: 'login' }
-]
+export const LayoutContext = createContext();
 
-const Layout = ({ children, selectedPage, onSetPage }) => {
 
-  const renderPageLinks = () => {
-        
-    return pages.map(page => (
-       <li
-          key={page.key}
-          style={{
-            ...styles.sidebarLink,
-            ...(page.key === selectedPage ? styles.selected : {}),
-          }}
-          onClick={() => onSetPage(page.key)}
-        >
-          {page.name}
-        </li>
-    ));
-  }
+const Layout = () => {
+
 
 
   return (
     
-    <div style={styles.container}>
-      {/* Navigation */}
+    <div>
+      <Header />
       
       <NavBar />
 
-      <div style={styles.main}>
-        {/* Sidebar */}
-        <aside style={styles.sidebar}>
-          <ul>
-           {renderPageLinks()}
-          </ul>
-        </aside>
 
-        {/* Content Area */}
-        <section style={styles.content}>
-          {children}
-        </section>
-      </div>
+      {/* Content Area */}
+      <main className='content'>
+        <Outlet/>
+      </main>
 
       {/* Footer */}
       <Footer />
