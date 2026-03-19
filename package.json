@@ -2,25 +2,28 @@
   "name": "lms-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "proxy": "http://localhost:3001",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "seed": "node seeds/seed.js"
   },
   "dependencies": {
     "axios": "^1.7.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.20.0",
     "nodemon": "^3.1.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.2",
     "sequelize": "^6.37.5"
   },
   "devDependencies": {
