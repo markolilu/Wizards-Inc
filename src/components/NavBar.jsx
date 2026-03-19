@@ -1,36 +1,40 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const pages = [
-    {name: 'Home', key: 'home'},
-    {name: 'Login', key: 'login'},
-    {name: 'Register', key: 'register'},
-    {name: 'Account', key: 'account'}
+    {name: 'Home', path: '/'},
+    {name: 'Login', path: '/login'},
+    {name: 'Register', path: '/register'},
+    {name: 'Profile', path: '/profile'}
 ]
 
-const Navbar = ({ selectedPage, onSetPage }) => {
+const Navbar = () => {
+    const location = useLocation();
 
     const renderPageLinks = () => {
+        return pages.map(page => {
+            const isActive = page.path === '/'
+                 ? location.pathname === '/'
+                 : location.pathname.startsWith(page.path);
+       
+            return (
+                <li
+                    key={page.path}
+                    style={{
+                        backgroundColor: isActive ? '#999' : 'transparent',
+                    }}
+                >
+                <Link
+                    to={page.path}
+                    onClick={() => console.log('Navigated to: ' + page.path)}
+                >
+                    {page.name}
+                </Link>
+                    
+                </li>
+            );
+        });
+    };
 
-
-        return pages.map(page => (
-            <li
-                key={page.key}
-                style={{
-                    ...styles.sidebarLink,
-                    ...Navbar(page.key === selectedPage ? styles.selected : {}),
-                }}
-                onClick={() => onSetPage(page.key)}
-            >
-            <Link
-                to={`/${page.key === 'home' ? '' : page.key}`}
-                onClick={() => onSetPage(page.key)}
-            >
-                {page.name}
-            </Link>
-                
-            </li>
-        ));
-    }
 
     return (
         <div>
