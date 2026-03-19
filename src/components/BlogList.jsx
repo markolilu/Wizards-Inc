@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import { useState, useEffect } from 'react';
 // import api from '../api';
 
 const BlogList = () => {

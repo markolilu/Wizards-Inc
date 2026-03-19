@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 
 const pages = [
@@ -48,10 +50,5 @@ const Navbar = () => {
     );
 };
 
-const styles = {
-    selected: {
-        backgroundColor: '#999'
-    },
-};
 
 export default Navbar;

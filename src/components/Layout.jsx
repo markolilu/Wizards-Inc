@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { createContext } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -9,8 +11,6 @@ export const LayoutContext = createContext();
 
 
 const Layout = () => {
-
-
 
   return (
     
