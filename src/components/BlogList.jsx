@@ -7,7 +7,7 @@ const Blogpost = () => {
   const [courses, setPosts] = useState([]);
 
   useEffect(() => {
-    const fetchCourses = async () => {
+    const fetchPosts = async () => {
       try {
         const response = await api.get('/api/posts');
 
