@@ -1,16 +1,16 @@
 import React from 'react';
 
-import login from '../components/Login';
-import register from '../components/Register';
+import Login from '../components/Login';
+import Register from '../components/Register';
 
 const LogInRegistration = () => {
     return (
         <>
             <div>
-                <login />
+                <Login />
             </div>
             <div>
-                <register />
+                <Register />
             </div>
         </>
     )
