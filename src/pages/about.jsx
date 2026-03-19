@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useState } from 'react';
+
 const Divider = () => {
   return (
     <hr
@@ -9,6 +11,24 @@ const Divider = () => {
 };
 
 const AboutPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('contact form data: ' + formData)
+  };
+
   return (
     <div>
       <div className="container">

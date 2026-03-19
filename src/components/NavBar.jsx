@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 const pages = [
     {name: 'Home', path: '/'},
     {name: 'Login', path: '/login'},
-    {name: 'Register', path: '/register'},
+    {name: 'About', path: '/about'},
     {name: 'Profile', path: '/profile'}
 ]
 
