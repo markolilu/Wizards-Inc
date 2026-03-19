@@ -1,38 +1,30 @@
 import React from 'react';
 
-import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import {useState} from 'react';
+import { SessionProvider } from './contexts/SessionContext';
 
 //import components here
-import Navbar from './components/NavBar';
+import Layout from './components/Layout';
 
 import Home from './pages/home';
 import Login from './pages/login';
-import Register from './pages/register';
-import Account from './pages/account';
-import Footer from './components/Footer';
-
-import { SessionProvider } from './contexts/SessionContext';
+import Profile from './pages/profile';
 import AboutPage from './pages/about';
 
 
 const App = () => {
-    const [selectedPage, setSelectedPage] = useState('home');
 
     return (
         <Router>
             <SessionProvider>
-                <Header />
-                <Navbar selectedPage={selectedPage} onSetPage={setSelectedPage} />
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/account" element={<Account />} />
-                    <Route path="/about" element={<AboutPage />} />
+                    <Route path='/' element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path="login" element={<Login />} /> {/* path = login : auto becomes /login in the url*/}
+                        <Route path="profile" element={<Profile />} /> {/* path = profile : auto becomes /profile in the url*/}
+                        <Route path="about" element={<AboutPage />} /> {/* path = about : auto becomes /about in the url*/}
+                    </Route>
                 </Routes>
-                <Footer />
             </SessionProvider>
         </Router>
     )
