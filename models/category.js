@@ -7,7 +7,7 @@ class Category extends Model {}
 Category.init(
   {
     category_name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
