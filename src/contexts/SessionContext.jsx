@@ -1,4 +1,6 @@
-import React, { createContext, useState, useContext } from 'react';
+import React from 'react';
+
+import { createContext, useState, useContext } from 'react';
 
 export const SessionContext = createContext();
 
