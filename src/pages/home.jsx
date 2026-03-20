@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-// Assuming these are imported from your data files
-import postsData from '../data/posts.json'; 
-import categoriesData from '../data/categories.json';
+
+import postsData from '../../seeds/posts.json'; 
+import categoriesData from '../../seeds/categories.json';
 
 const Home = ({ isAuthenticated }) => {
   const [posts] = useState(postsData);
   const [postContent, setPostContent] = useState('');
 
   return (
-    <div style={styles.container}>
+    <div className="container">
       <header className="home-header">
         <h1 className="home-title">Share your garden's journey.</h1>
         <div className="home-text">
@@ -18,14 +18,14 @@ const Home = ({ isAuthenticated }) => {
 
       <section>
         {isAuthenticated ? (
-          <div style={styles.inputWrapper}>
+          <div>
             <textarea className="post-input"
               placeholder="Add your post here..."               
               value={postContent}
               onChange={(e) => setPostContent(e.target.value)}
             />
-            <div style={styles.categoryRow}>
-               <select style={styles.select}>
+            <div className="category-row">
+               <select className="select-category">
                   <option>Choose Categories</option>
                   {categoriesData.map(cat => (
                     <option key={cat.id} value={cat.id}>{cat.categoryName}</option>
@@ -36,7 +36,7 @@ const Home = ({ isAuthenticated }) => {
           </div>
         ) : (
           <div>
-            <p>Log-in if you would like to post.</p>
+            <p>Log-in or sign-up if you would like to post.</p>
             <button className="home-btn">Go to Login</button>
           </div>
         )}
@@ -47,21 +47,19 @@ const Home = ({ isAuthenticated }) => {
     
         {posts.map((post) => (
           <div key={post.id} style={styles.postEntry}>
-            {/* Post Title/Content Area */}
-            <div style={styles.titleBox}>
-              <h3 style={styles.postTitleText}>{post.title}</h3>
+            
+            <div>
+              <h3 className="post-title">{post.title}</h3>
             </div>
-
-            {/* Metadata Grid (Matches your wireframe split) */}
-            <div style={styles.metaContainer}>
-              <div style={styles.userColumn}>
-                {post.postedBy}
+            <div>
+              <div className="post-user">
+                {post.user}
               </div>
               <div style={styles.infoColumn}>
-                <div style={styles.categoryRowItem}>
+                <div className="post-category">
                   {categoriesData.find(c => c.id === post.category_id)?.categoryName || "Uncategorized"}
                 </div>
-                <div className="home-date">
+                <div className="date">
                   {new Date(post.created_on).toLocaleDateString()}
                 </div>
               </div>
@@ -73,4 +71,4 @@ const Home = ({ isAuthenticated }) => {
   );
 };
 
-// export default Home;
+ export default Home;
