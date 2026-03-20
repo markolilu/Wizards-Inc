@@ -72,3 +72,5 @@ const Home = ({ isAuthenticated }) => {
     </div>
   );
 };
+
+// export default Home;
