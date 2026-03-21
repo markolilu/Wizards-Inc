@@ -36,14 +36,3 @@ const BlogList = () => {
 
 export default BlogList;
 
-
-// return (
-//     <div>
-//       <h2>All Posts</h2>
-//       <div className="post-list">
-//         {posts.map((post) => (
-//           <CourseCard key={course.id} course={course} />
-//         ))}
-//       </div>
-//     </div>
-//   );

@@ -1,0 +1,21 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6ec;
+}
+
+header {
+    border-top: 3px solid #4e3b31;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+    width: 250px;
+}
+
+footer {
+    background-color: #1b3022;
+}
