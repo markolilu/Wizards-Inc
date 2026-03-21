@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       
       <nav>
-        <div class="img"><img src="/src/assets/logo3.png" /></div>
+        <div class="logo"><img src="/src/assets/logo3.png" /></div>
         <div class="footer">
             <p>The social network for roots and shoots. Document your journey from seed to harvest.</p>
         </div>
@@ -17,6 +17,6 @@ const Footer = () => {
   );
 };
 
-//footer will be using #1b3022 background
+
 
 export default Footer;

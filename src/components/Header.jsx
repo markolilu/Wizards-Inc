@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <header>
-      <div class="img"><img src="/src/assets/logo2.png" alt='Sow & Tell Logo'/></div>
+      <div class="logo"><img src="/src/assets/logo2.png" alt='Sow & Tell Logo'/></div>
       <nav>
         <Link to="/">All Posts</Link>
         {token ? (
