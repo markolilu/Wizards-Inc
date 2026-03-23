@@ -49,9 +49,6 @@ const Home = ({ isAuthenticated }) => {
           <div key={post.id} /*style={styles.postEntry}*/>
             
             <div>
-              <h3 className="post-title">{post.title}</h3>
-            </div>
-            <div>
               <div className="post-user">
                 {post.user}
               </div>

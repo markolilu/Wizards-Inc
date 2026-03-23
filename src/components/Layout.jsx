@@ -17,13 +17,19 @@ const Layout = () => {
     <div>
       <Header />
       
-      <NavBar />
+      <div className=''>
+        <aside>
+          <NavBar />
+        </aside>
+      
 
 
-      {/* Content Area */}
-      <main className='content'>
-        <Outlet/>
-      </main>
+        {/* Content Area */}
+        <main className='content'>
+          <Outlet/>
+        </main>
+      </div>
+
 
       {/* Footer */}
       <Footer />
