@@ -1,6 +1,6 @@
 import React from 'react';
 import UserInfo from '../components/profile/UserInfo';
-import UserPost from '../components/profile/UserPost';
+import UserPost from '../components/profile/UserPosts';
 import postsData from '../../seeds/posts.json';
 
 const Profile = ({ currentUser }) => {

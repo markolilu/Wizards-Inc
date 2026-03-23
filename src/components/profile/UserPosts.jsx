@@ -1,6 +1,8 @@
 import React from 'react';
-import postsData from '../../seed/posts.json';
-import categoriesData from '../../seeds/categories.json';
+import postsData from '../../../seeds/posts.json';
+import categoriesData from '../../../seeds/categories.json';
+
+
 
 const UserPost = ({ post }) => {
   return (
