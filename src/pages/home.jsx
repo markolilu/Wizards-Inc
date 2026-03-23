@@ -46,7 +46,7 @@ const Home = ({ isAuthenticated }) => {
       <main>
     
         {posts.map((post) => (
-          <div key={post.id} style={styles.postEntry}>
+          <div key={post.id} /*style={styles.postEntry}*/>
             
             <div>
               <h3 className="post-title">{post.title}</h3>
@@ -55,7 +55,7 @@ const Home = ({ isAuthenticated }) => {
               <div className="post-user">
                 {post.user}
               </div>
-              <div style={styles.infoColumn}>
+              <div /* style={styles.infoColumn}*/>
                 <div className="post-category">
                   {categoriesData.find(c => c.id === post.category_id)?.categoryName || "Uncategorized"}
                 </div>

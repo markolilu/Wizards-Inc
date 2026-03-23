@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useState } from 'react';
 
-import api from '../../controllers/index';
+import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await api.post('/api/users/login', {email: email, password: password})
+            const response = await axios.post('/users/login', {userName: userName, password: password})
             const data = response.data;
 
             setUser({
