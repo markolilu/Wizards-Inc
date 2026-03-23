@@ -22,7 +22,7 @@ const Navbar = () => {
                 <li
                     key={page.path}
                     style={{
-                        backgroundColor: isActive ? '#999' : 'transparent',
+                        backgroundColor: isActive ? '#97b648' : 'transparent',
                     }}
                 >
                 <Link

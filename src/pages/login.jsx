@@ -6,7 +6,7 @@ import Register from '../components/Register';
 const LogInRegistration = () => {
     return (
         <>
-            <div>
+            <div className="signup-page">
                 <Login />
             </div>
             <div>

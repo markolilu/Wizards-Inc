@@ -6,16 +6,135 @@ body {
 }
 
 header {
-    border-top: 3px solid #4e3b31;
+    border-top: 5px solid #4e3b31;
     display: flex;
     justify-content: space-between;
+    background-color: #f6f6ec;
+
+}
+
+h2 {
+    color: #4e3b31;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
 }
 
 .logo {
     display: block;
-    width: 250px;
+    max-width: 250px;
+    padding: 10px 20px 10px 20px;
+}
+
+.header-login {
+    display: flex;
+    justify-self: end;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 20px;
+    color: #1b3022;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+input[type="submit"] {
+    border: none;
+    background: #4aaaa5;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #4e3b31;
+    color: #f6f6ec;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-div {
+    display: block;
+    margin: auto;
+}
+
+/* .layout-div {
+    display: flex;
+}  */
+
+/* .layout-div {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+} */
+
+.navbar {
+    /* display: flex; */
+    flex: 1;
+    min-height: 100vh;
+    min-width: 100vw;
+    
+}
+
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 5px;
+    color: #1b3022;
+    text-decoration: none;
+}
+
+.signup-page {
+    display: block;
+
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #97b648;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 footer {
     background-color: #1b3022;
+    color: #f6f6ec;
+    text-align: center;
+    padding: 10px 20px 30px 20px;
+}
+
+.profile-div {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }

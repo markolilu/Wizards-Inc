@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       
       <nav>
-        <div className="logo"><img src="/src/assets/logo3.png" /></div>
+        <div><img className="logo" src="/src/assets/logo3.png" /></div>
         <div className="footer">
             <p>The social network for roots and shoots. Document your journey from seed to harvest.</p>
         </div>
