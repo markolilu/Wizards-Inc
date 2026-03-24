@@ -115,6 +115,7 @@ const Register = () => {
             {errorMsg && <p>{errorMsg}</p>}
             <div className="center">
             <button type="submit">Register</button>
+            </div>
         </form>
     );
 };
