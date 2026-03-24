@@ -1,7 +1,5 @@
 const { Post, User, Category } = require("../models");
 
-const {authMiddleWare} = require('../utils/auth');
-
 // GET /api/posts - Get all posts
 const getAllPosts = async (req, res) => {
   try {
@@ -42,9 +40,9 @@ const getPostById = async (req, res) => {
 // POST /api/posts - Create a post
 const createPost = async (req, res) => {
   try {
-    const { title, content, postedBy, userId, categoryIds } = req.body;
+    const { title, content, categoryIds } = req.body;
 
-    const newPost = await Post.create({ title, content, postedBy: req.user.userName, userId: req.user.userId });
+    const newPost = await Post.create({ title, content, postedBy: req.user.userName, userId: req.user.id });
 
     if (categoryIds && categoryIds.length) {
       await newPost.addCategories(categoryIds);
@@ -87,15 +85,17 @@ const updatePost = async (req, res) => {
 // DELETE /api/posts/:id - Delete a post
 const deletePost = async (req, res) => {
   try {
-    const deleted = await Post.destroy({ where: { id: req.params.id } });
+    const post = await Post.findByPk(req.params.id);
 
-    if (!deleted) {
+    if (!post) {
       return res.status(404).json({ message: "Post not found" });
     }
 
     if (post.userId !== req.user.id) {
-      return res.status(403).json({message: 'Unauthorized'});
+      return res.status(403).json({ message: "Unauthorized" });
     }
+
+    await post.destroy();
 
     res.status(200).json({ message: "Post deleted" });
   } catch (err) {

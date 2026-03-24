@@ -1,5 +1,8 @@
+
 const bcrypt = require("bcrypt");
 const { User } = require("../models");
+const { signToken } = require("../utils/auth");
+const { ValidationError } = require("sequelize");
 
 // POST /api/users - Register
 const register = async (req, res) => {
@@ -33,14 +36,14 @@ const register = async (req, res) => {
       password,
     });
 
-    res.status(201).json({
-      user: {
-        id: newUser.id,
-        userName: newUser.userName,
-      },
-    });
+    const token = signToken(newUser);
+
+    res.status(201).json({ token, user: { id: newUser.id, userName: newUser.userName } });
   } catch (err) {
     console.error(err);
+    if (err instanceof ValidationError) {
+      return res.status(400).json({ message: err.errors[0].message });
+    }
     res.status(500).json({ message: "Registration failed", error: err.message });
   }
 };
@@ -61,12 +64,9 @@ const login = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    res.status(200).json({
-      user: {
-        id: user.id,
-        userName: user.userName,
-      },
-    });
+    const token = signToken(user);
+
+    res.status(200).json({ token, user: { id: user.id, userName: user.userName } });
   } catch (err) {
 
     console.error(err);
