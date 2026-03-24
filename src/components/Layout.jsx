@@ -32,16 +32,11 @@ const Layout = () => {
         </main>
       </div>
 
-        {/* Content Area */}
-        <main className='content'>
-          <Outlet/>
-        </main>
-      </div>
+       
 
 
       {/* Footer */}
       <Footer />
-
     </div>
   );
 };

@@ -110,7 +110,6 @@ const Register = () => {
             />
             {errorMsg && <p>{errorMsg}</p>}
             <button type="submit">Register</button>
-            </div>
         </form>
     );
 };

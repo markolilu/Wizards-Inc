@@ -1,13 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import postsData from '../../seeds/posts.json';
+import api from '../api';
+
 import categoriesData from '../../seeds/categories.json';
 
 import BlogList from '../components/BlogList';
 
 const Home = ({ isAuthenticated }) => {
-  const [posts] = useState(postsData);
+  const [posts, setPosts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [postContent, setPostContent] = useState('');
+
+  useEffect(() => {
+  const fetchPosts = async () => {
+    try {
+      const response = await api.get('/api/posts');
+      setPosts(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const fetchCategories = async () => {
+    try {
+      const response = await api.get('/api/categories');
+      setCategories(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchPosts();
+  fetchCategories();
+}, []);
 
   const Divider = () => {
     return (
@@ -38,7 +63,7 @@ const Home = ({ isAuthenticated }) => {
             <div className="category-row">
               <select className="select-category">
                 <option>Choose Categories</option>
-                {categoriesData.map(cat => (
+                {categories.map(cat => (
                   <option key={cat.id} value={cat.id}>{cat.categoryName}</option>
                 ))}
               </select>
