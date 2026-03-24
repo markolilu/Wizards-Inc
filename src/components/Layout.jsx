@@ -34,7 +34,6 @@ const Layout = () => {
 
           {/* Footer */}
       <Footer />
-
     </div>
   );
 };

@@ -10,7 +10,7 @@ const PostCard = ({post}) => {
     <div className="card">
         <div className="card-username">Posted By: {post.username}</div>
         <div className="card-content">Post: {post.content}</div>
-        <div className="post-category">Post Category: {post.category}</div>
+        <div className="post-category">Post Category: {post.categories?.map(cat => cat.category_name).join(', ')}</div>
         {post.userId === currentUserId && (
         <div className="card-options">
           <Link className="editBtn" to={`/posts/${post.id}`}>Edit</Link>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 import { useState } from 'react';
@@ -45,6 +46,9 @@ const Register = () => {
             const response = await api.post('/api/users', {email: email, userName: userName, firstName: firstName, lastName: lastName, password: password, password2: password2 });
             console.log('response: ', response);
             const data = response.data;
+
+            localStorage.setItem('authToken', data.token);
+            localStorage.setItem('currentUserId', data.user.id);
 
             setUser({
                 username: data.user.userName,
@@ -111,7 +115,6 @@ const Register = () => {
             {errorMsg && <p>{errorMsg}</p>}
             <div className="center">
             <button type="submit">Register</button>
-            </div>
         </form>
     );
 };
