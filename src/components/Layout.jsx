@@ -32,9 +32,11 @@ const Layout = () => {
         </main>
       </div>
 
+       
+
+
       {/* Footer */}
       <Footer />
-
     </div>
   );
 };
