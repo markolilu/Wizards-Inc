@@ -61,14 +61,14 @@ const Register = () => {
             <h2>Register</h2>
             <input 
                 type="text"
-                placeholder="email"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
             />
             <input 
                 type="text"
-                placeholder="user name"
+                placeholder="Choose your username"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 required
@@ -102,7 +102,9 @@ const Register = () => {
                 required
             />
             {error && <p>{error}</p>}
+            <div className="center">
             <button type="submit">Register</button>
+            </div>
         </form>
     );
 };

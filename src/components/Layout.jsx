@@ -13,21 +13,30 @@ export const LayoutContext = createContext();
 const Layout = () => {
 
   return (
-    
+
     <div>
       <Header />
-      
-      <NavBar />
+
+      <div className="navbar">
+        <aside className="sidebar">
+          <NavBar />
+        </aside>
 
 
-      {/* Content Area */}
-      <main className='content'>
-        <Outlet/>
-      </main>
+
+
+
+        {/* Content Area */}
+        <main className='content'>
+          <Outlet />
+        </main>
+      </div>
+
+
 
       {/* Footer */}
       <Footer />
-     
+
     </div>
   );
 };

@@ -1,12 +1,12 @@
 [
-  { "id": 1, "categoryName": "pest_control" },
-  { "id": 2, "categoryName": "edible_gardening" },
-  { "id": 3, "categoryName": "indoor_plants" },
-  { "id": 4, "categoryName": "soil_health" },
-  { "id": 5, "categoryName": "propagation_tips" },
-  { "id": 6, "categoryName": "flower_power" },
-  { "id": 7, "categoryName": "urban_homesteading" },
-  { "id": 8, "categoryName": "seasonal_prep" },
-  { "id": 9, "categoryName": "tool_reviews" },
-  { "id": 10, "categoryName": "garden_design" }
+  { "id": 1, "category_name": "pest_control" },
+  { "id": 2, "category_name": "edible_gardening" },
+  { "id": 3, "category_name": "indoor_plants" },
+  { "id": 4, "category_name": "soil_health" },
+  { "id": 5, "category_name": "propagation_tips" },
+  { "id": 6, "category_name": "flower_power" },
+  { "id": 7, "category_name": "urban_homesteading" },
+  { "id": 8, "category_name": "seasonal_prep" },
+  { "id": 9, "category_name": "tool_reviews" },
+  { "id": 10, "category_name": "garden_design" }
 ]
