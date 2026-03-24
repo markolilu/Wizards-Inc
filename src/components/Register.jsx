@@ -113,6 +113,7 @@ const Register = () => {
                 required
             />
             {errorMsg && <p>{errorMsg}</p>}
+            <div className="center">
             <button type="submit">Register</button>
         </form>
     );

@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
 
 const Divider = () => {
   return (
-    <hr
-      style={{ borderTop: "1px solid #96b747" }}
-    ></hr>
+    <hr></hr>
   );
 };
+
+
 
 const AboutPage = () => {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ const AboutPage = () => {
     <div className="about-container">
       <div>
         <div>
-          <img className="about-img1" src="/src/assets/logo1.png" alt='Sow & Tell Logo' />
+          <img className="about-img1" src="/src/assets/logo1v2.png" alt='Sow & Tell Logo' />
           <h1 className="about-heading">About Sow & Tell</h1>
         </div>
       </div>
@@ -71,11 +72,13 @@ const AboutPage = () => {
       <Divider />
       <div className="container">
         <h2>Join the Growth</h2>
-        We believe that when we share what we sow, we all grow together. It's time to tell your garden's story.
-        <button>Dig In - Create Your Profile</button>
+        <p>We believe that when we share what we sow, we all grow together. It's time to tell your garden's story.</p>
+        <Link to="/login">
+        <button type="submit" >Dig In - Create Your Profile</button>
+        </Link>
       </div>
       <Divider />
-      <div className="form-container">
+      <div className="form-about">
         <h2>Contact Us</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">

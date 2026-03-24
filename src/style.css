@@ -10,17 +10,28 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: #f6f6ec;
-
 }
 
 h2 {
     color: #4e3b31;
     font-family: "Open Sans", sans-serif;
     text-align: center;
+    font-family: "Open Sans", sans-serif;;
 }
 
 h1 {
     color: #1b3022;
+    margin-bottom: 30px;
+    font-family: "Open Sans", sans-serif;;
+}
+
+hr {
+    border-top: 2px solid #96b747;
+    line-height: 5px;
+    width: 70%;
+    background-color: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .logo {
@@ -39,9 +50,10 @@ h1 {
     color: #1b3022;
     text-decoration: none;
     font-size: 16px;
+
 }
 
-input[type="text"],
+input[type="text"], [type="password"], [type="email"],
 select,
 textarea {
     width: 100%;
@@ -53,6 +65,7 @@ textarea {
     font-size: 14px;
     padding: 0 20px 0 20px;
     line-height: 1.5;
+    font-family: "Open Sans", sans-serif;;
 }
 
 input[type="submit"] {
@@ -70,10 +83,12 @@ button[type="submit"],
     background-color: #4e3b31;
     color: #f6f6ec;
     border-radius: 20px;
-    padding: 5px 30px 5px 30px;
+    border: none;
+    padding: 10px 40px 10px 40px;
     text-align: center;
     font-size: 16px;
-
+    margin-top: 15px;
+    font-family: "Open Sans", sans-serif;;
 }
 
 .center {
@@ -98,21 +113,42 @@ button[type="submit"],
     min-width: 100vw;
 } */
 
-.navbar {
-    /* display: flex; */
+/* .navbar {
+    display: flex;
     flex: 1;
-    min-height: 100vh;
-    min-width: 100vw;
-
-}
+    background-color: #f6f6ec;
+} */
 
 
 .sidebar {
-    width: 200px;
-    background-color: #f4f4f4;
+    position: absolute;
+    left: 20px;
+    top: 150px;
+    width: 150px;
+    background-color: #f6f6ec;
     padding: 5px;
     color: #1b3022;
     text-decoration: none;
+}
+
+.sidebar ul li a {
+  color: #1b3022;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none; 
+}
+.sidebar ul {
+  list-style-type: none; 
+  padding: 0;           
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;   
+}
+
+link {
+    color: #1b3022;
 }
 
 .signup-page {
@@ -209,4 +245,8 @@ footer {
     grid-template-columns: 3fr 1fr;
     align-items: center;
     gap: 20px;
+}
+
+.card {
+    margin: 15px auto;
 }
