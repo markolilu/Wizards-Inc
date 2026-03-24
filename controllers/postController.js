@@ -1,11 +1,13 @@
 const { Post, User, Category } = require("../models");
 
+const {authMiddleWare} = require('../utils/auth');
+
 // GET /api/posts - Get all posts
 const getAllPosts = async (req, res) => {
   try {
     const posts = await Post.findAll({
       include: [
-        { model: User, attributes: ["id", "user_name"] },
+        { model: User, attributes: ["id", "userName"] },
         { model: Category, as: "categories", attributes: ["id", "category_name"] },
       ],
     });
@@ -21,7 +23,7 @@ const getPostById = async (req, res) => {
   try {
     const post = await Post.findByPk(req.params.id, {
       include: [
-        { model: User, attributes: ["id", "user_name"] },
+        { model: User, attributes: ["id", "userName"] },
         { model: Category, as: "categories", attributes: ["id", "category_name"] },
       ],
     });
@@ -42,7 +44,7 @@ const createPost = async (req, res) => {
   try {
     const { title, content, postedBy, userId, categoryIds } = req.body;
 
-    const newPost = await Post.create({ title, content, postedBy, userId });
+    const newPost = await Post.create({ title, content, postedBy: req.user.userName, userId: req.user.userId });
 
     if (categoryIds && categoryIds.length) {
       await newPost.addCategories(categoryIds);
@@ -65,6 +67,10 @@ const updatePost = async (req, res) => {
       return res.status(404).json({ message: "Post not found" });
     }
 
+    if (post.userId !== req.user.id) {
+      return res.status(403).json({message: 'Unauthorized'});
+    }
+
     await post.update({ title, content, postedBy });
 
     if (categoryIds) {
@@ -85,6 +91,10 @@ const deletePost = async (req, res) => {
 
     if (!deleted) {
       return res.status(404).json({ message: "Post not found" });
+    }
+
+    if (post.userId !== req.user.id) {
+      return res.status(403).json({message: 'Unauthorized'});
     }
 
     res.status(200).json({ message: "Post deleted" });

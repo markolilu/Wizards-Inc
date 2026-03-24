@@ -7,16 +7,21 @@ const register = async (req, res) => {
     const { email, userName, firstName, lastName, password, password2 } = req.body;
 
     if (password !== password2) {
+      console.log('heyy')
       return res.status(400).json({ message: "Passwords do not match" });
     }
 
     const existingEmail = await User.findOne({ where: { email } });
     if (existingEmail) {
+      console.log('hi')
+
       return res.status(400).json({ message: "Email already in use" });
     }
 
     const existingUserName = await User.findOne({ where: { user_name: userName } });
     if (existingUserName) {
+      console.log('helllooo')
+
       return res.status(400).json({ message: "Username already taken" });
     }
 
@@ -52,6 +57,7 @@ const login = async (req, res) => {
 
     const validPassword = user.checkPassword(password);
     if (!validPassword) {
+
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
@@ -62,6 +68,7 @@ const login = async (req, res) => {
       },
     });
   } catch (err) {
+
     console.error(err);
     res.status(500).json({ message: "Login failed", error: err.message });
   }

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import postsData from '../../seeds/posts.json';
 import categoriesData from '../../seeds/categories.json';
 
+import BlogList from '../components/BlogList';
+
 const Home = ({ isAuthenticated }) => {
   const [posts] = useState(postsData);
   const [postContent, setPostContent] = useState('');
@@ -53,28 +55,9 @@ const Home = ({ isAuthenticated }) => {
 
 
       <main>
+    
+        <BlogList posts={posts} />
 
-        {posts.map((post) => (
-          <div key={post.id} /*style={styles.postEntry}*/>
-
-            <div>
-              <h3 className="post-title">{post.title}</h3>
-            </div>
-            <div>
-              <div className="post-user">
-                {post.user}
-              </div>
-              <div /* style={styles.infoColumn}*/>
-                <div className="post-category">
-                  {categoriesData.find(c => c.id === post.category_id)?.categoryName || "Uncategorized"}
-                </div>
-                <div className="date">
-                  {new Date(post.created_on).toLocaleDateString()}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
       </main>
     </div>
   );
