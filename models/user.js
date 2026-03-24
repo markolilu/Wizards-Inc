@@ -45,7 +45,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8, 100],
+        len: { args: [8, 100], msg: "Password must be at least 8 characters" },
         // below is a regex expression to check if password contains: lowercase, UPPERCASE, number (0-9) and Special character (!, $, @ etc.)
         // is: /^(?=.*[a-z])(?=.*[A_Z])(?=.*[.*\d])(?=.*[\W_]).+$/
       },

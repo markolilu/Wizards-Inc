@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const secret = 'mysecretssshhhhhhh';
+const secret = process.env.JWT_SECRET || 'mysecretssshhhhhhh';
 const expiration = '2h';
 
 const authMiddleWare = (req, res, next) => {
