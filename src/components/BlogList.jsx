@@ -3,8 +3,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import api from '../api';
 
-const BlogList = () => {
-  const [posts, setPosts] = useState([]);
+import PostCard from './PostCard';
+
+const BlogList = ({posts}) => {
 
   useEffect(() => {
     const fetchPosts = async () => {

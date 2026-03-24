@@ -14,12 +14,12 @@ const Register = () => {
     const [password2, setPassword2] = useState('');
 
     const{ setUser } = useSession();
-    const[error, setError] = useState('');
+    const[errorMsg, setErrorMsg] = useState('');
 
     const navigate = useNavigate();
 
     const displayError = (message) => {
-        setError(message);
+        setErrorMsg(message);
         setTimeout(() => {
             setError('');
         }, 3000);
@@ -43,6 +43,7 @@ const Register = () => {
 
         try {
             const response = await api.post('/api/users', {email: email, userName: userName, firstName: firstName, lastName: lastName, password: password, password2: password2 });
+            console.log('response: ', response);
             const data = response.data;
 
             setUser({
@@ -52,7 +53,13 @@ const Register = () => {
 
             navigate('/');
         } catch (error) {
-            console.error('Registration failed', error)
+            console.error('Registration failed 2', error.response)
+            const backEndError = error.response?.data?.message
+            if (backEndError !== null) {
+                setErrorMsg(backEndError)
+            }
+            
+
         }
     };
 
@@ -88,20 +95,20 @@ const Register = () => {
                 required
             />
             <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
             />
             <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={password2}
                 onChange={(e) => setPassword2(e.target.value)}
                 required
             />
-            {error && <p>{error}</p>}
+            {errorMsg && <p>{errorMsg}</p>}
             <button type="submit">Register</button>
         </form>
     );

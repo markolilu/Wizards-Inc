@@ -1,6 +1,7 @@
 const { Model, DataTypes, Sequelize } = require("sequelize");
 
 const sequelize = require("../config/connection");
+const User = require("./user");
 
 class Post extends Model {}
 
@@ -18,6 +19,14 @@ Post.init(
     postedBy: {
       type: DataTypes.TEXT,
       allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     },
     //created_on
     createdOn: {
