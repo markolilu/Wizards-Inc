@@ -25,20 +25,22 @@ const Header = () => {
 
   return (
     <header>
-      <div className="logo"><img src="/src/assets/logo2.png" alt='Sow & Tell Logo'/></div>
+      <div ><img className="logo" src="/src/assets/logo2.png" alt="Sow & Tell Logo"/></div>
       <nav>
-        <Link to="/">All Posts</Link>
+        <div className="header-login">
+        <Link className="header-login" to="/">All Posts</Link>
         {token ? (
           <>
-            <Link to="/profile">{wordCase(user.username)}'s Profile</Link>
+            <Link className="header-login" to="/profile">{wordCase(user.username)}'s Profile</Link>
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+            <Link className="header-login" to="/login">Login</Link>
+            <Link className="header-login" to="/login">Signup</Link>
           </>
         )}
+        </div>
       </nav>
     </header>
   );

@@ -43,6 +43,7 @@ const Login = () => {
     };
 
     return (
+        <div className="center-div">
         <form onSubmit={handleSubmit}>
             <h2>Login</h2>
             <input 
@@ -59,8 +60,11 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
             />
+            <div className="center">
             <button type="submit">Login</button>
+            </div>
         </form>
+        </div>
     );
 };
 
