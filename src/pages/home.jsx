@@ -11,9 +11,7 @@ const Home = ({ isAuthenticated }) => {
 
   const Divider = () => {
     return (
-      <hr
-        style={{ borderTop: "2px solid #96b747", width: "50%" }}
-      ></hr>
+      <hr></hr>
     );
   };
 
@@ -24,7 +22,7 @@ const Home = ({ isAuthenticated }) => {
 
       <p>A post a day keeps the aphids... well, it won't keep the aphids away, but at least you'll have someone to complain to about them.</p>
 
-<Divider />
+      <Divider />
 
       { /*i need to log-in to style section below*/}
       <section>
@@ -53,9 +51,9 @@ const Home = ({ isAuthenticated }) => {
         )}
       </section>
 
-
+      <Divider />
       <main>
-    
+
         <BlogList posts={posts} />
 
       </main>

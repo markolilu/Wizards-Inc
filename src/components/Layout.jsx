@@ -17,7 +17,7 @@ const Layout = () => {
     <div>
       <Header />
 
-      <div className="navbar">
+      <div>
         <aside className="sidebar">
           <NavBar />
         </aside>
@@ -32,14 +32,7 @@ const Layout = () => {
         </main>
       </div>
 
-        {/* Content Area */}
-        <main className='content'>
-          <Outlet/>
-        </main>
-      </div>
-
-
-      {/* Footer */}
+          {/* Footer */}
       <Footer />
 
     </div>

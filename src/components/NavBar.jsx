@@ -39,7 +39,7 @@ const Navbar = () => {
 
 
     return (
-        <div>
+        <div className="navbar">
             <aside>
 
                 <ul>

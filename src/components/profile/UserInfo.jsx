@@ -32,25 +32,26 @@ const UserInfo = ({ currentUser }) => {
         <div>
           <div>
             <label>First Name</label>
-            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
+            <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} />
           </div>
           <div>
             <label>Last Name</label>
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
+            <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} />
           </div>
         </div>
 
         <div>
           <label>Email Address</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} />
+          <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
         </div>
 
         <div>
           <label>Password</label>
           <input type="password" name="password" value={formData.password} onChange={handleChange} />
         </div>
-
+        <div className="center">
         <button type="submit">Save Changes</button>
+        </div>
       </form>
     </section>
   );

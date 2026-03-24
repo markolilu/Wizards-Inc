@@ -25,10 +25,10 @@ const Header = () => {
 
   return (
     <header>
-      <div ><img className="logo" src="/src/assets/logo2.png" alt="Sow & Tell Logo"/></div>
+      <div ><img className="logo" src="/src/assets/logo2v2.png" alt="Sow & Tell Logo"/></div>
       <nav>
         <div className="header-login">
-        <Link className="header-login" to="/">All Posts</Link>
+       
         {token ? (
           <>
             <Link className="header-login" to="/profile">{wordCase(user.username)}'s Profile</Link>

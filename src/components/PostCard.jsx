@@ -8,7 +8,7 @@ const PostCard = ({post}) => {
 
   return (
     <div className="card">
-        <div className="card-title">Post Title: {post.title}</div>
+        <div className="card-username">Posted By: {post.username}</div>
         <div className="card-content">Post: {post.content}</div>
         <div className="post-category">Post Category: {post.category}</div>
         {post.userId === currentUserId && (
