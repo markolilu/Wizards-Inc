@@ -6,6 +6,18 @@ import categoriesData from '../../seeds/categories.json';
 
 import BlogList from '../components/BlogList';
 
+// // Inside your Parent Component (e.g., Home.js)
+// const postsWithUsernames = postsData.map(post => {
+//   // 1. Find the user object by ID
+//   const user = usersData.find(u => u.id === post.UserId);
+  
+//   return {
+//     ...post,
+//     // 2. Use "userName" to match your JSON exactly
+//     displayAuthor: user ? user.userName : "Anonymous Gardener" 
+//   };
+// });
+
 const Home = ({ isAuthenticated }) => {
   const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]);
