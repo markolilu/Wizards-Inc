@@ -40,24 +40,24 @@ const Home = ({ isAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem('token');
+
     try {
       const payload = {
         title: "",
         content: postContent,
-        categoryId: selectedCategories.map(id => Number(id))
+        categoryIds: selectedCategories.map(id => Number(id))
       };
 
-      const response = await api.post('/api/posts', payload)
+      const response = await api.post('/api/posts', payload, {headers: {Authorization: `Bearer ${token}`}})
       const data = response.data;
       console.log(data);
 
       // navigate('/');
     } catch (error) {
-      console.error('Create Post Failed', error.response)
-      const backEndError = error.response?.data?.message
-      if (backEndError !== null) {
-        setErrorMsg(backEndError)
-      }
+      console.error('FULL ERROR:', error);
+      console.error('RESPONSE:', error.response);
+      console.error('REQUEST:', error.request);
     }
   };
 

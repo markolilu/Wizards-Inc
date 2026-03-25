@@ -21,7 +21,19 @@ const seedDatabase = async () => {
     individualHooks: true
   });
   await Category.bulkCreate(categoryData);
-  await Post.bulkCreate(postData);
+
+  for (const post of postData) {
+  const createdPost = await Post.create({
+    title: post.title,
+    content: post.content,
+    postedBy: post.postedBy,
+    userId: post.userId
+  });
+
+  if (post.category_id) {
+    await createdPost.addCategories([post.category_id]);
+  }
+};
 
 
   console.log(

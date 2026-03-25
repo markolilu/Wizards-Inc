@@ -44,10 +44,11 @@ const createPost = async (req, res) => {
   try {
     const { title, content, postedBy, userId, categoryIds } = req.body;
 
-    const newPost = await Post.create({ title, content, postedBy: req.user.userName, userId: req.user.Id });
+    const newPost = await Post.create({ title, content, postedBy: req.user.userName, userId: req.user.id });
 
     if (categoryIds && categoryIds.length) {
       await newPost.addCategories(categoryIds);
+      console.log("categories added: ", categoryIds);
     }
 
     res.status(201).json(newPost);

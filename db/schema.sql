@@ -1,2 +1,2 @@
-drop database if exists garderners_db;
-create database garderners_db;
+drop database if exists gardeners_db;
+create database gardeners_db;

@@ -20,10 +20,10 @@ const App = () => {
             <SessionProvider>
                 <Routes>
                     <Route path='/' element={<Layout />}>
-                        <Route index element={<Home />} />
-                        <Route path="login" element={<LogInRegistration />} /> {/* path = login : auto becomes /login in the url*/}
-                        <Route path="profile" element={<Profile />} /> {/* path = profile : auto becomes /profile in the url*/}
-                        <Route path="about" element={<AboutPage />} /> {/* path = about : auto becomes /about in the url*/}
+                        <Route index element={<Home isAuthenticated={Boolean(localStorage.getItem('token'))} />} />
+                        <Route path="login" element={<LogInRegistration isAuthenticated={Boolean(localStorage.getItem('token'))} />} /> 
+                        <Route path="profile" element={<Profile isAuthenticated={Boolean(localStorage.getItem('token'))} />} /> 
+                        <Route path="about" element={<AboutPage isAuthenticated={Boolean(localStorage.getItem('token'))} />} /> 
                     </Route>
                 </Routes>
             </SessionProvider>
