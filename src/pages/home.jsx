@@ -88,6 +88,7 @@ const Home = ({ isAuthenticated }) => {
             value={postContent}
             onChange={(e) => setPostContent(e.target.value)}
           />
+          <div className="category-flex-container">
           {categories.map(category => (
             <div key={category.id}>
               <input type="checkbox" id={`category${category.id}`} value={category.id} onChange={(e) => {
@@ -103,6 +104,7 @@ const Home = ({ isAuthenticated }) => {
               <label htmlFor={`category${category.id}`}>{category.category_name}</label><br />
             </div>
           ))}
+          </div>
 
           <button className="home-btn" type='submit'>Plant Your Post</button>
         </form>
