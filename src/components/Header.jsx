@@ -32,7 +32,7 @@ const Header = () => {
         {token ? (
           <>
             <Link className="header-login" to="/profile">{wordCase(user.userName)}'s Profile</Link>
-            <button onClick={handleLogout}>Logout</button>
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <>

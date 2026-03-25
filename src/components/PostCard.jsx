@@ -8,10 +8,10 @@ const PostCard = ({post}) => {
 
   return (
     <div className="card">
-        <div className="card-username"><span className="postcard-definition">Posted By:</span> {post.userId}</div>
+        <div className="card-username"><span className="postcard-definition">Posted By:</span> {post.postedBy ? post.postedBy : "Unknown Gardener"}</div>
         <div className="card-content">{post.content}</div>
         <div className="post-category"><span className="postcard-definition">Post Category:</span> {post.categories?.map(cat => cat.category_name).join(', ')}</div>
-        {post.userId === currentUserId && (
+        {String(post.userId) === String(currentUserId) && (
         <div className="card-options">
           <Link className="editBtn" to={`/posts/${post.id}`}>Edit</Link>
           <Link className="deletBtn" to={`/posts/${post.id}`}>Delete</Link>

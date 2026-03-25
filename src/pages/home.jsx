@@ -5,18 +5,9 @@ import api from '../api';
 import categoriesData from '../../seeds/categories.json';
 
 import BlogList from '../components/BlogList';
+import { useNavigate } from 'react-router-dom';
+import usersData from '../../seeds/users.json';
 
-// // Inside your Parent Component (e.g., Home.js)
-// const postsWithUsernames = postsData.map(post => {
-//   // 1. Find the user object by ID
-//   const user = usersData.find(u => u.id === post.UserId);
-  
-//   return {
-//     ...post,
-//     // 2. Use "userName" to match your JSON exactly
-//     displayAuthor: user ? user.userName : "Anonymous Gardener" 
-//   };
-// });
 
 const Home = ({ isAuthenticated }) => {
   const [posts, setPosts] = useState([]);
@@ -25,57 +16,60 @@ const Home = ({ isAuthenticated }) => {
   const [postContent, setPostContent] = useState('');
 
   useEffect(() => {
-  const fetchPosts = async () => {
-    try {
-      const response = await api.get('/api/posts');
-      setPosts(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const fetchCategories = async () => {
-    try {
-      const response = await api.get('/api/categories');
-      setCategories(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  fetchPosts();
-  fetchCategories();
-}, []);
-
-const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const payload = {
-              title: "",
-              content: postContent,
-              categoryId: selectedCategories.map(id => Number(id))
-            };
-
-            const response = await api.post('/api/posts', payload)
-            const data = response.data;
-            console.log(data);
-
-            // navigate('/');
-        } catch (error) {
-            console.error('Create Post Failed', error.response)
-            const backEndError = error.response?.data?.message
-            if (backEndError !== null) {
-                setErrorMsg(backEndError)
-            }
-        }
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get('/api/posts');
+        setPosts(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     };
+
+    const fetchCategories = async () => {
+      try {
+        const response = await api.get('/api/categories');
+        setCategories(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchPosts();
+    fetchCategories();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const payload = {
+        title: "",
+        content: postContent,
+        categoryId: selectedCategories.map(id => Number(id))
+      };
+
+      const response = await api.post('/api/posts', payload)
+      const data = response.data;
+      console.log(data);
+
+      // navigate('/');
+    } catch (error) {
+      console.error('Create Post Failed', error.response)
+      const backEndError = error.response?.data?.message
+      if (backEndError !== null) {
+        setErrorMsg(backEndError)
+      }
+    }
+  };
+
+  const navigate = useNavigate();
 
   const Divider = () => {
     return (
       <hr></hr>
     );
   };
-
+ 
+ 
   return (
     <div className="home-container">
 
@@ -88,35 +82,35 @@ const handleSubmit = async (e) => {
       { /*i need to log-in to style section below*/}
       <section>
         {/* {isAuthenticated ? ( */}
-          <form onSubmit={handleSubmit}>
-            <textarea className="post-input"
-              placeholder="Add your post here..."
-              value={postContent}
-              onChange={(e) => setPostContent(e.target.value)}
-            />
-            { categories.map(category => (
-              <div key={category.id}>
-                <input type="checkbox" id={`category${category.id}`} value={category.id} onChange={(e) => {
-                  const isChecked = e.target.checked;
-                  const categoryId = e.target.value;
-                  
-                  if (isChecked) {
-                    setselectedCategories(prev => [...prev, categoryId]);
-                  } else {
-                    setselectedCategories(prev => prev.filter(id => id !== categoryId));
-                  }
-                }} />
-                <label htmlFor={`category${category.id}`}>{category.category_name}</label><br />
-              </div>
-            )) }
-           
-            <button className="home-btn" type='submit'>Plant Your Post</button>
-          </form>
+        <form onSubmit={handleSubmit}>
+          <textarea className="post-input"
+            placeholder="Add your post here..."
+            value={postContent}
+            onChange={(e) => setPostContent(e.target.value)}
+          />
+          {categories.map(category => (
+            <div key={category.id}>
+              <input type="checkbox" id={`category${category.id}`} value={category.id} onChange={(e) => {
+                const isChecked = e.target.checked;
+                const categoryId = e.target.value;
+
+                if (isChecked) {
+                  setselectedCategories(prev => [...prev, categoryId]);
+                } else {
+                  setselectedCategories(prev => prev.filter(id => id !== categoryId));
+                }
+              }} />
+              <label htmlFor={`category${category.id}`}>{category.category_name}</label><br />
+            </div>
+          ))}
+
+          <button className="home-btn" type='submit'>Plant Your Post</button>
+        </form>
         {/* ) : ( */}
-          <div className="home">
-            <p>Log-in or sign-up if you would like to post.</p>
-            <button className="home-btn">Go to Login</button>
-          </div>
+        <div className="home">
+          <p>Log-in or sign-up if you would like to post.</p>
+          <button className="home-btn" onClick={() => navigate('/login')}>Go to Login</button>
+        </div>
         {/* )} */}
       </section>
 
