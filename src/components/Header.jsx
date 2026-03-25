@@ -6,12 +6,12 @@ import { useSession } from '../contexts/SessionContext';
 
 const Header = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem('authToken');
+  const token = localStorage.getItem('token');
 
   const { user } = useSession();
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('token');
     navigate('/login');
   };
 
@@ -31,7 +31,7 @@ const Header = () => {
        
         {token ? (
           <>
-            <Link className="header-login" to="/profile">{wordCase(user.userName)}'s Profile</Link>
+            <Link className="header-login" to="/profile">{/*wordCase(user.username)*/}Your Profile</Link>
             <button className="logout-btn" onClick={handleLogout}>Logout</button>
           </>
         ) : (

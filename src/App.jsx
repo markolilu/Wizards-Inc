@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -21,9 +21,9 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         <Route index element={<Home />} />
-                        <Route path="login" element={<LogInRegistration />} /> {/* path = login : auto becomes /login in the url*/}
-                        <Route path="profile" element={<Profile />} /> {/* path = profile : auto becomes /profile in the url*/}
-                        <Route path="about" element={<AboutPage />} /> {/* path = about : auto becomes /about in the url*/}
+                        <Route path="login" element={<LogInRegistration />} /> 
+                        <Route path="profile" element={<Profile />} /> 
+                        <Route path="about" element={<AboutPage />} /> 
                     </Route>
                 </Routes>
             </SessionProvider>

@@ -5,15 +5,24 @@ import api from '../api';
 import categoriesData from '../../seeds/categories.json';
 
 import BlogList from '../components/BlogList';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import usersData from '../../seeds/users.json';
 
 
-const Home = ({ isAuthenticated }) => {
+const Home = () => {
   const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setselectedCategories] = useState([]);
   const [postContent, setPostContent] = useState('');
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsAuthenticated(!localStorage.getItem('token'));
+  }, [location]);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -40,28 +49,27 @@ const Home = ({ isAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem('token');
+
     try {
       const payload = {
         title: "",
         content: postContent,
-        categoryId: selectedCategories.map(id => Number(id))
+        categoryIds: selectedCategories.map(id => Number(id))
       };
 
-      const response = await api.post('/api/posts', payload)
+      const response = await api.post('/api/posts', payload, {headers: {Authorization: `Bearer ${token}`}})
       const data = response.data;
       console.log(data);
 
       // navigate('/');
     } catch (error) {
-      console.error('Create Post Failed', error.response)
-      const backEndError = error.response?.data?.message
-      if (backEndError !== null) {
-        setErrorMsg(backEndError)
-      }
+      console.error('FULL ERROR:', error);
+      console.error('RESPONSE:', error.response);
+      console.error('REQUEST:', error.request);
     }
   };
 
-  const navigate = useNavigate();
 
   const Divider = () => {
     return (
@@ -108,12 +116,12 @@ const Home = ({ isAuthenticated }) => {
 
           <button className="home-btn" type='submit'>Plant Your Post</button>
         </form>
-        {/* ) : ( */}
+         {/* ) : (  */}
         <div className="home">
           <p>Log-in or sign-up if you would like to post.</p>
           <button className="home-btn" onClick={() => navigate('/login')}>Go to Login</button>
         </div>
-        {/* )} */}
+         {/* )}  */}
       </section>
 
       <Divider />

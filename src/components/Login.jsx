@@ -30,8 +30,9 @@ const Login = () => {
                 id: data.user.id
             })
 
-            localStorage.setItem('authToken', data.token);
             localStorage.setItem('currentUserId', data.user.id);
+            localStorage.setItem('currentUser', JSON.stringify({ username: data.user.username, id: data.user.id }));
+            localStorage.setItem('token', data.token);
             navigate('/');
         } catch (error) {
             console.error('Login failed 2', error.response)

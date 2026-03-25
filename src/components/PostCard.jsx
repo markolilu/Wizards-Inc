@@ -6,6 +6,8 @@ const PostCard = ({post}) => {
 
   const currentUserId = localStorage.getItem('currentUserId');
 
+  console.log('data: ', post);
+
   return (
     <div className="card">
         <div className="card-username"><span className="postcard-definition">Posted By:</span> {post.postedBy ? post.postedBy : "Unknown Gardener"}</div>

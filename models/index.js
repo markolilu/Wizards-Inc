@@ -5,13 +5,15 @@ const User = require("./user");
 
 Post.belongsToMany(Category, {
   through: "PostCategory",
-  foreignKey: "categoryId",
+  foreignKey: "postId",
+  otherKey: "categoryId",
   as: "categories",
 });
 
 Category.belongsToMany(Post, {
   through: "PostCategory",
   foreignKey: "categoryId",
+  otherKey: "postId",
   as: "posts",
 });
 
