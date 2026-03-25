@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -20,10 +20,10 @@ const App = () => {
             <SessionProvider>
                 <Routes>
                     <Route path='/' element={<Layout />}>
-                        <Route index element={<Home isAuthenticated={Boolean(localStorage.getItem('token'))} />} />
-                        <Route path="login" element={<LogInRegistration isAuthenticated={Boolean(localStorage.getItem('token'))} />} /> 
-                        <Route path="profile" element={<Profile isAuthenticated={Boolean(localStorage.getItem('token'))} />} /> 
-                        <Route path="about" element={<AboutPage isAuthenticated={Boolean(localStorage.getItem('token'))} />} /> 
+                        <Route index element={<Home />} />
+                        <Route path="login" element={<LogInRegistration />} /> 
+                        <Route path="profile" element={<Profile />} /> 
+                        <Route path="about" element={<AboutPage />} /> 
                     </Route>
                 </Routes>
             </SessionProvider>

@@ -5,15 +5,24 @@ import api from '../api';
 import categoriesData from '../../seeds/categories.json';
 
 import BlogList from '../components/BlogList';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import usersData from '../../seeds/users.json';
 
 
-const Home = ({ isAuthenticated }) => {
+const Home = () => {
   const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setselectedCategories] = useState([]);
   const [postContent, setPostContent] = useState('');
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsAuthenticated(!localStorage.getItem('token'));
+  }, [location]);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -61,7 +70,6 @@ const Home = ({ isAuthenticated }) => {
     }
   };
 
-  const navigate = useNavigate();
 
   const Divider = () => {
     return (
@@ -106,12 +114,12 @@ const Home = ({ isAuthenticated }) => {
 
           <button className="home-btn" type='submit'>Plant Your Post</button>
         </form>
-        {/* ) : ( */}
+         {/* ) : (  */}
         <div className="home">
           <p>Log-in or sign-up if you would like to post.</p>
           <button className="home-btn" onClick={() => navigate('/login')}>Go to Login</button>
         </div>
-        {/* )} */}
+         {/* )}  */}
       </section>
 
       <Divider />
