@@ -17,6 +17,8 @@ const Home = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const token = localStorage.getItem('token');
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -68,6 +70,15 @@ const Home = () => {
       console.error('RESPONSE:', error.response);
       console.error('REQUEST:', error.request);
     }
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get('/api/posts');
+        setPosts(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchPosts();
   };
 
 
@@ -89,7 +100,7 @@ const Home = () => {
 
       { /*i need to log-in to style section below*/}
       <section>
-        {/* {isAuthenticated ? ( */}
+        {token ? (
         <form onSubmit={handleSubmit}>
           <textarea className="post-input"
             placeholder="Add your post here..."
@@ -116,12 +127,12 @@ const Home = () => {
 
           <button className="home-btn" type='submit'>Plant Your Post</button>
         </form>
-         {/* ) : (  */}
+          ) : (  
         <div className="home">
           <p>Log-in or sign-up if you would like to post.</p>
           <button className="home-btn" onClick={() => navigate('/login')}>Go to Login</button>
         </div>
-         {/* )}  */}
+         )}  
       </section>
 
       <Divider />
