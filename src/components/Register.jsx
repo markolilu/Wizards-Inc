@@ -47,7 +47,7 @@ const Register = () => {
             console.log('response: ', response);
             const data = response.data;
 
-            localStorage.setItem('authToken', data.token);
+            localStorage.setItem('token', data.token);
             localStorage.setItem('currentUserId', data.user.id);
 
             setUser({
